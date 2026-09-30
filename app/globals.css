@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* ============================================
+   AI Bug Detective — Design Tokens
+   Forensic Developer Theme
+   ============================================ */
+
+@theme {
+  /* ---- Typography ---- */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", monospace;
+
+  /* ---- Core Surfaces ---- */
+  --color-background: #f5f7f6;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #eef2f1;
+  --color-surface-tertiary: #e2e8e6;
+
+  /* ---- Text ---- */
+  --color-foreground: #172033;
+  --color-foreground-secondary: #475569;
+  --color-foreground-tertiary: #64748b;
+  --color-foreground-muted: #94a3b8;
+
+  /* ---- Borders ---- */
+  --color-border: #dde5e2;
+  --color-border-strong: #cbd5d1;
+
+  /* ---- Sidebar / Command Center ---- */
+  --color-sidebar-bg: #111827;
+  --color-sidebar-surface: #1f2937;
+  --color-sidebar-border: #273449;
+  --color-sidebar-text: #f8fafc;
+  --color-sidebar-text-secondary: #94a3b8;
+
+  /* ---- Primary Accent (Deep Teal) ---- */
+  --color-primary-50: #f0fdfa;
+  --color-primary-100: #ccfbf1;
+  --color-primary-200: #99f6e4;
+  --color-primary-300: #5eead4;
+  --color-primary-400: #2dd4bf;
+  --color-primary-500: #14b8a6;
+  --color-primary-600: #0d9488;
+  --color-primary-700: #0f766e;
+  --color-primary-800: #115e59;
+  --color-primary-900: #134e4a;
+
+  /* ---- AI Accent (Cyan — AI intelligence & analysis) ---- */
+  --color-ai-50: #ecfeff;
+  --color-ai-100: #cffafe;
+  --color-ai-200: #a5f3fc;
+  --color-ai-300: #67e8f9;
+  --color-ai-400: #22d3ee;
+  --color-ai-500: #06b6d4;
+  --color-ai-600: #0891b2;
+  --color-ai-700: #0e7490;
+  --color-ai-800: #155e75;
+  --color-ai-900: #164e63;
+
+  /* ---- Investigation / Evidence Accent (Amber) ---- */
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  --color-amber-200: #fde68a;
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+
+  /* ---- Status: Critical ---- */
+  --color-critical-50: #fef2f2;
+  --color-critical-100: #fee2e2;
+  --color-critical-500: #ef4444;
+  --color-critical-600: #dc2626;
+  --color-critical-700: #b91c1c;
+
+  /* ---- Status: High ---- */
+  --color-high-50: #fff7ed;
+  --color-high-100: #ffedd5;
+  --color-high-500: #f97316;
+  --color-high-600: #ea580c;
+  --color-high-700: #c2410c;
+
+  /* ---- Status: Medium ---- */
+  --color-medium-50: #fffbeb;
+  --color-medium-100: #fef3c7;
+  --color-medium-500: #f59e0b;
+  --color-medium-600: #d97706;
+  --color-medium-700: #b45309;
+
+  /* ---- Status: Resolved ---- */
+  --color-resolved-50: #f0fdf4;
+  --color-resolved-100: #dcfce7;
+  --color-resolved-500: #22c55e;
+  --color-resolved-600: #16a34a;
+  --color-resolved-700: #15803d;
+
+  /* ---- Status: Informational ---- */
+  --color-info-50: #f8fafc;
+  --color-info-100: #f1f5f9;
+  --color-info-500: #64748b;
+  --color-info-600: #475569;
+  --color-info-700: #334155;
+
+  /* ---- Border Radius ---- */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* ---- Shadows ---- */
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.04);
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.04);
+}
+
+/* ---- Base ---- */
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: var(--color-primary-100);
+  color: var(--color-primary-900);
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-foreground-muted);
+}
+
+/* ---- Focus Visible ---- */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
